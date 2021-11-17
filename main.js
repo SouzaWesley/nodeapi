@@ -45,4 +45,15 @@ function deleteUser() {
     }).catch(error => console.log(error));
 }
 
-deleteUser();
+// deleteUser();
+
+function getOneUser() {
+    axios.get(`${url}/4`).then(response => {
+        const data = response.data;
+
+        const renderResults = document.querySelector("#render-results");
+        renderResults.textContent = JSON.stringify(data);
+    }).catch(error => console.log(error));
+}
+
+getOneUser();
